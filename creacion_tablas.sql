@@ -1,26 +1,53 @@
-CREATE DATABASE escuela;
-use escuela;
+create database tarea;
+use tarea;
 
-CREATE TABLE Alumnos (NumAlum VARCHAR(12) NOT NULL, NombreAlum CHAR(20) , 
-Sem numeric , NumEsp CHAR(5) , Sexo CHAR(1) , PRIMARY KEY (NumAlum));
+create table especialidad (
+                                numEsp varchar(5) not null,
+                nombreEsp varchar(100),
+                PRIMARY KEY (numEsp));
+                
+create table alumnos (
+                                numAlum varchar(20) not null,
+                nombreAlum varchar(100),
+                semestre int(5),
+                numEsp varchar(5) not null,
+                                sexo varchar(1),
+                                FOREIGN KEY (numEsp) REFERENCES especialidad (numEsp),
+                PRIMARY KEY (numAlum));
+create table profesor (
+                                numProf varchar(20) not null,
+                nombreProf varchar(100),
+                grado varchar(20),
+                sueldo numeric,
+                PRIMARY KEY (numProf));
+                
+create table materia (
+                                numMat varchar(5),
+                nombreMat varchar(100),
+                creditos varchar(20),
+                numEsp varchar(10) not null,
+                                FOREIGN KEY (numEsp) REFERENCES especialidad (numEsp),
+                PRIMARY KEY (numMat));
 
-CREATE TABLE Especialidad (NumEsp VARCHAR(5) NOT NULL, NombreEsp CHAR(25), PRIMARY KEY(NumEsp));
 
-CREATE TABLE Profesor (NumProf integer NOT NULL, NombreProf CHAR(20), Sueldo integer, Grado CHAR(20),PRIMARY KEY(NumProf));
-
-CREATE TABLE Materia (NumMat CHAR(5) NOT NULL, NombreMat CHAR(20), Creditos integer, numEsp VARCHAR(5), PRIMARY KEY (NumMat));
-
-CREATE TABLE Horarios (NumMat char(5) NOT NULL , Grupo integer NOT NULL, NumProf integer, Dia CHAR (15), 
-	Hora integer, Salon integer, PRIMARY KEY (NumMat, Grupo),FOREIGN KEY(NumMat) REFERENCES Materia(NumMat));
-
-CREATE TABLE Calificaciones (NumAlum VARCHAR(12) NOT NULL, NumMat CHAR (5) NOT NULL, Grupo integer NOT NULL, Periodo CHAR(20) NOT NULL, 
-	Calificacion integer, PRIMARY KEY(NumAlum,NumMat,Grupo,Periodo), 
-	FOREIGN KEY (NumAlum) REFERENCES Alumnos(NumAlum), 
-	FOREIGN KEY (NumMat, Grupo) REFERENCES Horarios (NumMat,Grupo));
-
-
-
-
-
+create table horarios (
+                                numMat varchar(5) not null,
+                grupo varchar(20) not null,
+                numProf varchar(20) not null,
+                dia varchar(20),
+                                hora time,
+                                salon varchar(10),
+                                foreign key (numProf) REFERENCES profesor (numProf),
+                                FOREIGN KEY (numMat) REFERENCES materia (numMat),
+                PRIMARY KEY (numMat, grupo));
+               
+create table calificaciones (
+                                numAlum varchar(20) not null,
+                numMat varchar (5) not null,
+                grupo varchar(20) not null,
+                periodo varchar(20) not null,
+                                calificacion int(10), PRIMARY KEY (numAlum, numMat, grupo, periodo),
+                                FOREIGN KEY(numAlum) REFERENCES alumnos(numAlum),
+                                FOREIGN KEY(numMat, grupo) REFERENCES horarios(numMat,grupo));
 
 
