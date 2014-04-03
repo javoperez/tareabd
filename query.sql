@@ -11,16 +11,23 @@ select nombreProf from profesor
 2. Obtener parejas de nombre de profesor y nombre de alumno, tal que el 
 profesor imparta alguna materia al alumno, ordenar por nombre de profesor 
 y nombre de alumno 
-
-select nombreProf from profesor where numProf in (select)
+opcion B:
+select nombreProf from profesor where numProf in (select numProf from horarios where numMat in(select numMat from materia where numEsp in (select numEsp from alumnos where nombreAlum= "Mario Omar")))
+##########################  ESTA ESTA MAL!!!!!!!!!!!
  
 3. Obtener nombres de alumnos que lleven actualmente la materia de base de 
 datos. 
+select nombreAlum from alumnos where numAlum in (select numAlum from calificaciones where numMat in(select numMat from materia where nombreMat="Base de Datos"));
 
 4. Obtener los nombres de los profesores que imparten actualmente a todos los
-alumnos de la especialidad cuyo nombre es Licenciado en Sistemas 
-computacionales y cursen el quinto semestre. 
- 
+alumnos de la especialidad cuyo nombre es Ingeniero en Tecnologias Computacionales y cursen el segundo semestre. 
+
+select nombreProf from profesor where numProf= any(
+select numProf from horarios 
+where numMat= any(select numMat from calificaciones where 
+ 	numAlum= any(select numAlum from alumnos where (semestre= 8 and numEsp= 'ITC'))));
+
+
 5. Obtener los nombres de los alumnos que hayan aprobado más de 10 
 materias. Ordenarlos en orden alfabético. 
  
