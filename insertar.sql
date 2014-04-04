@@ -46,19 +46,39 @@ insert into horarios values ("BIO", 'G04', 'L04', "Jueves","12:30:00", 'N305');
 insert into horarios values ("MNI", 'G05', 'L05', "Viernes","1:00:00", 'N307');
 
 
-insert into calificaciones values("A00948868", "BD", "G01", "Enero-Mayo", "100");
-insert into calificaciones values ('A01129030', 'BD ',"G01", "Enero-Mayo", "90");
-insert into calificaciones values ('A01298354', 'BD', "G01", "Enero-Mayo", "90");
-insert into calificaciones values ('A02376978', "MAT3", 'G02', "Enero-Mayo", "80");
-insert into calificaciones values ('A01409353', "MAT3", 'G02', "Enero-Mayo", "80");
-insert into calificaciones values ('A09913254', "MAT3", 'G02', "Enero-Mayo", "80");
-insert into calificaciones values ('A05724303', "MAT3", 'G02', "Enero-Mayo", "75");
-insert into calificaciones values ('A01098737', "EST", 'G03', "Enero-Mayo", "75");
-insert into calificaciones values ('A02274029', "EST", 'G03', "Enero-Mayo", "75");
-insert into calificaciones values ('A01930752', "EST", 'G03', "Enero-Mayo", "99");
-insert into calificaciones values ('A08325673', "EST", 'G03', "Enero-Mayo", "99");
-insert into calificaciones values ('A19082512', "BIO", 'G04', "Enero-Mayo", "99");
-insert into calificaciones values ('A10928301', "BIO", 'G04', "Enero-Mayo", "100");
-insert into calificaciones values ('A00945150', "BIO", 'G04', "Enero-Mayo", "100");
-insert into calificaciones values ('A00948866',"MNI", 'G05', "Enero-Mayo", "70");
-insert into calificaciones values ('A11234244',"MNI", 'G05', "Enero-Mayo", "70");
+insert into calificaciones values("A00948868", "BD", "G01", "Enero-Mayo", 100);
+insert into calificaciones values ('A01129030', 'BD ',"G01", "Enero-Mayo", 90);
+insert into calificaciones values ('A01298354', 'BD', "G01", "Enero-Mayo", 50);
+insert into calificaciones values ('A02376978', "MAT3", 'G02', "Enero-Mayo", 99);
+insert into calificaciones values ('A01409353', "MAT3", 'G02', "Enero-Mayo", 60);
+insert into calificaciones values ('A09913254', "MAT3", 'G02', "Enero-Mayo", 70);
+insert into calificaciones values ('A05724303', "MAT3", 'G02', "Enero-Mayo", 40);
+insert into calificaciones values ('A01098737', "EST", 'G03', "Enero-Mayo", 80);
+insert into calificaciones values ('A02274029', "EST", 'G03', "Enero-Mayo", 60);
+insert into calificaciones values ('A01930752', "EST", 'G03', "Enero-Mayo", 70);
+insert into calificaciones values ('A08325673', "EST", 'G03', "Enero-Mayo", 88);
+insert into calificaciones values ('A19082512', "BIO", 'G04', "Enero-Mayo", 90);
+insert into calificaciones values ('A10928301', "BIO", 'G04', "Enero-Mayo", 50);
+insert into calificaciones values ('A00945150', "BIO", 'G04', "Enero-Mayo", 60);
+insert into calificaciones values ('A00948866',"MNI", 'G05', "Enero-Mayo", 65);
+insert into calificaciones values ('A11234244',"MNI", 'G05', "Enero-Mayo", 66);
+
+
+### AGREGO MAS calIFIcaciOnes para corregir de string a entero
+
+insert into calificaciones values("A00948868", "MAT3", 'G02', "Enero-Mayo", 100);
+insert into calificaciones values ('A01129030',"MAT3", 'G02', "Enero-Mayo", 90);
+insert into calificaciones values ('A01298354', "MAT3", 'G02', "Enero-Mayo", 80);
+insert into calificaciones values ('A02376978',"BD", "G01", "Enero-Mayo", 80);
+insert into calificaciones values ('A01409353',"BD", "G01", "Enero-Mayo", 70);
+insert into calificaciones values ('A09913254',"BD", "G01", "Enero-Mayo", 66);
+insert into calificaciones values ('A05724303',"BD", "G01", "Enero-Mayo", 65);
+insert into calificaciones values ('A01098737', "BD", "G01",  "Enero-Mayo", 90);
+insert into calificaciones values ('A02274029', "BD", "G01",  "Enero-Mayo", 83);
+insert into calificaciones values ('A01930752', "BD", "G01",  "Enero-Mayo", 90);
+insert into calificaciones values ('A08325673', "BD", "G01",  "Enero-Mayo", 54);
+insert into calificaciones values ('A19082512', "EST", 'G03', "Enero-Mayo", 60);
+insert into calificaciones values ('A10928301', "EST", 'G03', "Enero-Mayo", 59);
+insert into calificaciones values ('A00945150', "EST", 'G03', "Enero-Mayo", 53);
+insert into calificaciones values ('A00948866',"BIO", 'G04', "Enero-Mayo", 93);
+insert into calificaciones values ('A11234244',"BIO", 'G04', "Enero-Mayo", 69);

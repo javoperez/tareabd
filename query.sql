@@ -6,7 +6,7 @@ select nombreProf from profesor
  where numProf=any(select numProf from horarios 
  	where numMat= any(select numMat from materia
  	 where numEsp=any(select numEsp from especialidad
- 	 	where nombreEsp= 'Ingeniero en Tecnologias Computacionales'))) order by nombreProf;
+ 	 	where nombreEsp= ' Ingeniero en Tecnologias Computacionales'))) order by nombreProf;
  
 2. Obtener parejas de nombre de profesor y nombre de alumno, tal que el 
 profesor imparta alguna materia al alumno, ordenar por nombre de profesor 
@@ -25,15 +25,19 @@ alumnos de la especialidad cuyo nombre es Ingeniero en Tecnologias Computacional
 select nombreProf from profesor where numProf= any(
 select numProf from horarios 
 where numMat= any(select numMat from calificaciones where 
- 	numAlum= any(select numAlum from alumnos where (semestre= 8 and numEsp= 'ITC'))));
+numAlum= any(select numAlum from alumnos where (semestre= 8 and numEsp= 'ITC'))));
 
 
-5. Obtener los nombres de los alumnos que hayan aprobado más de 10 
-materias. Ordenarlos en orden alfabético. 
+5. Obtener los nombres de los alumnos que hayan aprobado más de 1
+materia. Ordenarlos en orden alfabético. 
+##########################  ESTA ESTA MAL!!!!!!!!!!!
+select count(*) from calificaciones where numAlum= "A00948868" and calificacion>70;
+
  
-6. Obtener nombre de materia y grupo de la especialidad Licenciado en 
+6. Obtener nombre de materias y grupo de la especialidad Ingeniero en 
 Sistemas Computacionales. 
- 
+select distinct nombreMat, grupo from horarios join materia on horarios.numMat = materia.numMat join alumnos on alumnos.numEsp = materia.numEsp where materia.numEsp = "ITC";
+
 7. Obtener una consulta que indique el nombre de la materia y la cantidad 
 alumnos inscritos en dicha especialidad. 
  
