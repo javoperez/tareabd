@@ -46,6 +46,7 @@ insert into horarios values ("BIO", 'G04', 'L04', "Jueves","12:30:00", 'N305');
 insert into horarios values ("MNI", 'G05', 'L05', "Viernes","1:00:00", 'N307');
 
 
+
 insert into calificaciones values("A00948868", "BD", "G01", "Enero-Mayo", 100);
 insert into calificaciones values ('A01129030', 'BD ',"G01", "Enero-Mayo", 90);
 insert into calificaciones values ('A01298354', 'BD', "G01", "Enero-Mayo", 50);
@@ -82,3 +83,9 @@ insert into calificaciones values ('A10928301', "EST", 'G03', "Enero-Mayo", 59);
 insert into calificaciones values ('A00945150', "EST", 'G03', "Enero-Mayo", 53);
 insert into calificaciones values ('A00948866',"BIO", 'G04', "Enero-Mayo", 93);
 insert into calificaciones values ('A11234244',"BIO", 'G04', "Enero-Mayo", 69);
+
+
+#Se agregaro una materia para ver si cambia la pregunta 10
+
+insert into materia values ("DEX", 'Diseño Experimentos', 'Probabilidad', "IMT");
+insert into horarios values ("DEX", 'G09', 'L05', "Viernes","8:00:00", 'N306');
